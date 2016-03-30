@@ -1,0 +1,16 @@
+<h1>Training Videos</h1>
+
+<h2>Cutting and Styling</h2>
+<% @videos.each do |video| %>
+<% if video.technique == 'Styling' %>
+<iframe width="280" height="157.5" src="<%= video.embed_url %>" frameborder="0" allowfullscreen></iframe>
+<% end %>
+<% end %>
+
+
+<h2>Colouring</h2>
+<% @videos.each do |video| %>
+<% if video.technique == 'Colouring' %>
+<iframe width="280" height="157.5" src="<%= video.embed_url %>" frameborder="0" allowfullscreen></iframe>
+<% end %>
+<% end %>

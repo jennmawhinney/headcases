@@ -1,0 +1,17 @@
+<h1><%= @video.name %></h1>
+
+<iframe width="560" height="315" src="<%= @video.embed_url %>" frameborder="0" allowfullscreen></iframe>
+
+<% if @current_user.present? %>
+<%- unless @current_user.favorited_videos.exists?(id: @video.id) -%>
+<%= link_to 'Add to favorites', favorite_videos_path(video_id: @video), method: :post %>
+<%- else -%>
+<%= link_to 'Remove from favorites', favorite_video_path(@video), method: :delete %>
+<%- end -%>
+<% end %>
+
+
+<% if @current_user.admin? %>
+<%= link_to 'Edit Video', edit_video_path(@video) %>
+<%= link_to 'Delete Video', @video, :method => :delete %>
+<% end %>

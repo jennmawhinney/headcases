@@ -1,0 +1,7 @@
+<h1>Welcome</h1>
+
+<p>
+<% if @current_user.present? %>
+<p>You are logged in as <%= @current_user.first_name %> </p>
+<% end %>
+</p>

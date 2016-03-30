@@ -1,0 +1,28 @@
+<div class="form-style-8">
+<%= form_for @hairdresser do |f| %>
+<fieldset>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</fieldset>
+<fieldset>
+  <%= f.label :discipline %>
+  <%= f.text_field :discipline %>
+</fieldset>
+<fieldset>
+  <%= f.label :blurb %>
+  <%= f.text_field :blurb %>
+</fieldset>
+<fieldset>
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+</fieldset>
+<fieldset>
+  <%= f.label :id %>
+  <%= f.select :id, Hairdresser.pluck(:name, :id), :include_blank => true %>
+  <!-- include_blank allows a blank option on the form so you can add a new artist ^^  -->
+</fieldset>
+<fieldset>
+  <%= f.submit %>
+</fieldset>
+<% end %>
+</div>

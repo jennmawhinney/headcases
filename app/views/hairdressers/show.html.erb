@@ -1,0 +1,19 @@
+<h1><%= @hairdresser.name %></h1>
+
+<%= image_tag(@hairdresser.image, :class => 'feature') %>
+<p>
+  <li><%= @hairdresser.blurb %></li>
+</p>
+
+<% @hairdresser.videos.each do |video| %>
+<% if video.hairdresser_id == @hairdresser[:id] %>
+<iframe width="250" height="175" src="<%= video.embed_url %>" frameborder="0" allowfullscreen></iframe>
+
+<% end %>
+<% end %>
+
+
+<% if @current_user.admin? %>
+<%= link_to 'Edit Hairdresser', edit_hairdresser_path(@hairdresser) %>
+<%= link_to 'Delete Hairdresser', @hairdresser, :method => :delete %>
+<% end %>

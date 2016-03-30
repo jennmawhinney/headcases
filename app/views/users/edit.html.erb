@@ -1,0 +1,27 @@
+<h1>Edit User</h1>
+<div class="form-style-8">
+<%= form_for @user do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+
+  <%= f.label :admin %>
+  <%= f.text_field :admin %>
+
+  <%= f.submit %>
+<% end %>
+</div>
