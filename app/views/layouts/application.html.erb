@@ -2,9 +2,13 @@
 <html>
 <head>
   <title>HeadcaseApp</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <%= cloudinary_js_config %>
 </head>
 <body class="<%= params[:controller] %>">
 <nav>

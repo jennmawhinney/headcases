@@ -26,8 +26,7 @@ class UsersController < ApplicationController
 
 def account
   @user = @current_user
-  @videos = Video.all
-  @favorite = Favorite.all
+  @video = @current_user.favorited_videos
 end
 
   # def update
@@ -42,7 +41,7 @@ end
 
   private
   def user_params
-    params.require(:user).permit(:id, :first_name, :last_name, :email, :password, :password_confirmation, :image, :favourited_id)
+    params.require(:user).permit(:id, :first_name, :last_name, :email, :password, :password_confirmation, :image, :favorited_id, :embed_url)
   end
 
   def authorise

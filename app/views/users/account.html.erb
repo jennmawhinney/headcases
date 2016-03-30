@@ -1,7 +1,6 @@
 <h1><%= @user.first_name %></h1>
 
-<% @favorite.each do |favorite| %>
-<% if favorite.user_id == 3 %>
-<iframe width="280" height="157.5" src="<%= video[:id] %>" frameborder="0" allowfullscreen></iframe>
-<% end %>
+<%= image_tag @user.image %>
+<% @video.each do |video| %>
+<%= video_tag video.embed_url %>
 <% end %>

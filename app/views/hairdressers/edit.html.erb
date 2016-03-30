@@ -1,2 +1,6 @@
-<h1>Edit Hairdressers</h1>
+<!-- <h1>Edit Hairdressers</h1> -->
+<%= form_for @hairdresser, url: '/hairdressers/:id', html: {multipart: true} do %>
+
 <%= render :partial => 'form' %>
+
+<% end %>

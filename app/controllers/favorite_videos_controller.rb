@@ -14,6 +14,10 @@ class FavoriteVideosController < ApplicationController
     redirect_to @video, notice: 'Video is no longer in favorites'
   end
 
+  def show
+    @favorite = Favorite.all
+  end
+
   private
 
   def set_video

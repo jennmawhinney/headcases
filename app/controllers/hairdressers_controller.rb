@@ -19,13 +19,19 @@ class HairdressersController < ApplicationController
   end
 
   def update
-  hairdresser = Hairdresser.find params [:id]
+  hairdresser = Hairdresser.find params[:id]
   hairdresser.update hairdresser_params
   redirect_to hairdresser
 end
 
   def show
     @hairdresser = Hairdresser.find params[:id]
+  end
+
+  def create
+  req = Cloudinary::Uploader.upload( params[:image_url] )
+  Hairdresser.create( :heading => params[:heading], :image_url => req["url"])
+  redirect_to root_path
   end
 
   private
