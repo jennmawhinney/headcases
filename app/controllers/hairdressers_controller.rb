@@ -10,8 +10,9 @@ class HairdressersController < ApplicationController
   end
 
   def create
-  hairdresser = Hairdresser.create hairdresser_params
-  redirect_to hairdresser
+  @hairdresser = Hairdresser.create hairdresser_params
+  @hairdresser.save
+  redirect_to @hairdresser
   end
 
   def edit
@@ -21,18 +22,18 @@ class HairdressersController < ApplicationController
   def update
   @hairdresser = Hairdresser.find params[:id]
   @hairdresser.update hairdresser_params
-  redirect_to hairdresser_path(@hairdresser)
+  redirect_to hairdresser_path ( @hairdresser )
 end
 
   def show
-    @hairdresser = Hairdresser.find params[:id]
+    @hairdresser = Hairdresser.find(params[:id])
   end
 
-  def create
-  req = Cloudinary::Uploader.upload( params[:image_url] )
-  Hairdresser.create( :heading => params[:heading], :image_url => req["url"])
-  redirect_to root_path
-  end
+  def destroy
+  @hairdresser = Hairdresser.find params[:id]
+  @hairdresser.destroy
+  redirect_to hairdressers_path
+end
 
   private
   def authorise
@@ -42,7 +43,7 @@ end
   end
 
   def hairdresser_params
-    params.require(:hairdresser).permit(:first_name, :last_name, :technique, :url, :hairdresser_id, :user_id)
+    params.require(:hairdresser).permit(:name, :discipline, :image, :blurb, :last_name, :technique, :url, :hairdresser_id, :user_id)
   end
 
 end

@@ -1,6 +1,10 @@
-<h1><%= @user.first_name %></h1>
-
-<%= image_tag @user.image %>
+<h1>Hi <%= @user.first_name %>!</h1>
+<div class="videos">
+<h2>Your Videos</h2>
 <% @video.each do |video| %>
 <iframe width="280" height="157.5" src="<%= video.embed_url %>" frameborder="0" allowfullscreen></iframe>
+<p>
+<%= link_to 'Remove', favorite_video_path(video.id), method: :delete %>
+</p>
 <% end %>
+</div>

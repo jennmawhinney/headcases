@@ -4,14 +4,14 @@
 
 <% if @current_user.present? %>
 <%- unless @current_user.favorited_videos.exists?(id: @video.id) -%>
-<%= link_to 'Add to favorites', favorite_videos_path(video_id: @video), method: :post %>
+<%= link_to 'Add', favorite_videos_path(video_id: @video), method: :post %>
 <%- else -%>
-<%= link_to 'Remove from favorites', favorite_video_path(@video), method: :delete %>
+<%= link_to 'Remove', favorite_video_path(@video), method: :delete %>
 <%- end -%>
 <% end %>
 
 
 <% if @current_user.admin? %>
-<%= link_to 'Edit Video', edit_video_path(@video) %>
-<%= link_to 'Delete Video', @video, :method => :delete %>
+<%= link_to 'Edit', edit_video_path(@video) %>
+<%= link_to 'Delete', @video, :method => :delete %>
 <% end %>

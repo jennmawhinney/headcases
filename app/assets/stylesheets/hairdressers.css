@@ -1,15 +1,31 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
 body{
-  background: #F3F2E7;
+  background: white;
   color: #272525;
-  font-size: 20px;
+  font-size: 16px;
   font-family: 'Raleway', sans-serif;
 }
 .container{
   width: 70%;
   margin: 0 auto;
 }
+.nav{
+  width: 100%;
+}
+.vid{
+  width: 50%;
+  margin: 0 auto;
+}
+.thumb{
+
+
+}
+.feature-video{
+
+}
 .nav ul {
+  font-size: 0.6em;
   list-style: none;
   background-color: #444;
   text-align: center;
@@ -17,8 +33,7 @@ body{
   margin: 0;
 }
 .nav li {
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.2em;
+  font-family: 'Raleway', sans-serif;
   line-height: 40px;
   height: 40px;
   border-bottom: 1px solid #888;

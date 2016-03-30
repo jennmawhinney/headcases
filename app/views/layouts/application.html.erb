@@ -17,24 +17,47 @@
   <%= cloudinary_js_config %>
 </head>
 <body class="<%= params[:controller] %>">
-<nav class ='.nav'>
+
+<nav class ='nav'>
   <ul>
-  <%= link_to 'Home', root_path, :class => 'nav' %>
-  <%= link_to 'My Account', '/users/account', :class => 'nav' %>
-  <%= link_to 'Hairdressers', hairdressers_path, :class => 'nav' %>
-  <%= link_to 'Videos', videos_path, :class => 'nav' %>
+  <li>
+  <a><%= link_to 'Home', root_path, :class => 'nav' %></a>
+  </li>
+  <li>
+  <a><%= link_to 'My Account', '/users/account', :class => 'nav' %></a>
+  </li>
+  <li>
+  <a><%= link_to 'Hairdressers', hairdressers_path, :class => 'nav' %></a>
+  </li>
+  <li>
+  <a><%= link_to 'Videos', videos_path, :class => 'nav' %></a>
+  </li>
 
   <% if @current_user.present? %>
     <% if @current_user.admin? %>
-    <%= link_to 'New Videos', new_video_path %>
-    <%= link_to 'New Hairdressers', new_hairdresser_path  %>
-      <%= link_to "All users", users_path %>
+    <li>
+    <a><%= link_to 'New Videos', new_video_path %></a>
+    </li>
+    <li>
+    <a><%= link_to 'New Hairdressers', new_hairdresser_path  %></a>
+    </li>
+    <li>
+      <a><%= link_to "All users", users_path %></a>
+      </li>
     <% end %>
-    <%= link_to "Edit profile", users_edit_path %>
-    <%= link_to "Logout #{ @current_user.first_name }", login_path, :method => :delete %>
+    <li>
+    <a><%= link_to "Edit profile", users_edit_path %></a>
+    </li>
+    <li>
+    <a><%= link_to "Logout #{ @current_user.first_name }", login_path, :method => :delete %></a>
+    </li>
   <% else %>
-    <%= link_to "Sign up", signup_path %>
-    <%= link_to "Login", login_path %>
+  <li>
+    <a><%= link_to "Sign up", signup_path %></a>
+    </li>
+    <li>
+    <a><%= link_to "Login", login_path %></a>
+    </li>
   <% end %>
   </ul>
 </nav>

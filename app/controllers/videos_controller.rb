@@ -10,22 +10,28 @@ class VideosController < ApplicationController
   end
 
   def create
-    @video = Video.create
-    redirect_to video_path(@video)
+    video = Video.create video_params
+    redirect_to video_path( video )
   end
 
   def edit
-    @video = Video.find params[:id]
+    @video = Video.find(params[:id])
   end
 
   def update
-    @video = Video.find params[:id]
-    @video.update video_params
+    @video = Video.find(params[:id])
+    video.update video_params
     redirect_to video_path(@video)
   end
 
   def show
-    @video = Video.find params[:id]
+    @video = Video.find(params[:id])
+  end
+
+  def destroy
+  @video = Video.find params[:id]
+  @video.destroy
+  redirect_to videos_path
   end
 
   private
@@ -36,7 +42,7 @@ class VideosController < ApplicationController
   end
 
   def video_params
-    params.require(:video).permit(:id, :name, :technique, :url, :hairdresser_id, :user_id)
+    params.require(:video).permit(:id, :name, :technique, :embed_url, :url,  :hairdresser_id, :user_id)
   end
 
 end
