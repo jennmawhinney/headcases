@@ -2,8 +2,14 @@
 <html>
 <head>
   <title>HeadcaseApp</title>
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,16 +17,17 @@
   <%= cloudinary_js_config %>
 </head>
 <body class="<%= params[:controller] %>">
-<nav>
-  <%= link_to 'Home', root_path %>
-  <%= link_to 'My Account', '/users/account' %>
-  <%= link_to 'Hairdressers', hairdressers_path %>
-  <%= link_to 'Videos', videos_path %>
+<nav class ='.nav'>
+  <ul>
+  <%= link_to 'Home', root_path, :class => 'nav' %>
+  <%= link_to 'My Account', '/users/account', :class => 'nav' %>
+  <%= link_to 'Hairdressers', hairdressers_path, :class => 'nav' %>
+  <%= link_to 'Videos', videos_path, :class => 'nav' %>
 
   <% if @current_user.present? %>
     <% if @current_user.admin? %>
     <%= link_to 'New Videos', new_video_path %>
-    <%= link_to 'New Hairdressers', new_hairdresser_path %>
+    <%= link_to 'New Hairdressers', new_hairdresser_path  %>
       <%= link_to "All users", users_path %>
     <% end %>
     <%= link_to "Edit profile", users_edit_path %>
@@ -29,8 +36,9 @@
     <%= link_to "Sign up", signup_path %>
     <%= link_to "Login", login_path %>
   <% end %>
+  </ul>
 </nav>
-
+</div>
 <% if flash[:error].present? %>
   <h2 class="error">
     <%= flash[:error] %>
@@ -40,6 +48,5 @@
 <div class="container">
 <%= yield %>
 </div>
-
 </body>
 </html>

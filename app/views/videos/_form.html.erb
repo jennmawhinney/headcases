@@ -21,11 +21,6 @@
     <%= f.select :hairdresser_id, Hairdresser.pluck(:name, :id), :include_blank => true %>
     <!-- include_blank allows a blank option on the form so you can add a new artist ^^  -->
   </fieldset>
-  <fieldset>
-    <%= f.label :user_id %>
-    <%= f.select :user_id, User.pluck(:first_name, :id), :include_blank => true %>
-    <!-- include_blank allows a blank option on the form so you can add a new artist ^^  -->
-  </fieldset>
   <%= f.submit %>
   <% end %>
 </div>

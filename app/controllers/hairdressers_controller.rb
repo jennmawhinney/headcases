@@ -19,9 +19,9 @@ class HairdressersController < ApplicationController
   end
 
   def update
-  hairdresser = Hairdresser.find params[:id]
-  hairdresser.update hairdresser_params
-  redirect_to hairdresser
+  @hairdresser = Hairdresser.find params[:id]
+  @hairdresser.update hairdresser_params
+  redirect_to hairdresser_path(@hairdresser)
 end
 
   def show

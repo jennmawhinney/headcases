@@ -10,8 +10,8 @@ class VideosController < ApplicationController
   end
 
   def create
-    video = Video.create
-    redirect_to video_path
+    @video = Video.create
+    redirect_to video_path(@video)
   end
 
   def edit

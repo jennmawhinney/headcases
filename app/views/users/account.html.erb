@@ -2,5 +2,5 @@
 
 <%= image_tag @user.image %>
 <% @video.each do |video| %>
-<%= video_tag video.embed_url %>
+<iframe width="280" height="157.5" src="<%= video.embed_url %>" frameborder="0" allowfullscreen></iframe>
 <% end %>

@@ -29,12 +29,6 @@ def account
   @video = @current_user.favorited_videos
 end
 
-  # def update
-  #   user = @current_user
-  #   user.update user_params
-  #   redirect_to root_path
-  # end
-
   def index
     @users = User.all
   end

@@ -1,4 +1,7 @@
 <h1>All Users</h1>
+<div class="users">
+
 <% @users.each do |user| %>
-  <p><%= user.email %> since <%= user.created_at %></p>
+  <p><%= user.first_name %>: <%= user.email %></p>
 <% end %>
+</div>
