@@ -3,7 +3,7 @@ class SessionController < ApplicationController
   def new
       user = @current_user
       if user.present?
-      redirect_to users_account_path
+      redirect_to welcome_path
     else
       return
     end

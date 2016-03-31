@@ -1,11 +1,9 @@
-<div class="vid-show">
+<div class="vid-skinny">
   <h1><%= @user.first_name %>'s Videos</h1>
-</div>
-<div class="vid-wide">
   <% @video.each do |video| %>
-  <a href="/videos/<%= video.id %>"><video width="280" height="157.5" src="<%= video.embed_url %>" frameborder="0" allowfullscreen controls></video></a>
-
-
+  <a href="/videos/<%= video.id %>"><video width="350" height="197" src="<%= video.embed_url %>" frameborder="0" allowfullscreen controls></video></a>
+<p>
 <li class="non-admin"><a><%= link_to 'Remove', favorite_video_path(video.id), method: :delete %></a></li>
+</p>
 <% end %>
 </div>

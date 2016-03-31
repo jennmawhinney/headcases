@@ -19,6 +19,25 @@ body{
   margin: 0 auto;
   text-align: center;
 }
+.vid-skinny{
+  width: 520px;
+  margin: 0 auto;
+  text-align: center;
+}
+.vid-skinny h1{
+  margin-bottom: 1em;
+}
+.vid-skinny li.non-admin{
+  margin-right: 4em;
+  margin-bottom: -.25em;
+  margin-top: -.5em;
+}
+.vid-skinny li.non-admin:hover{
+  background: #E82C0C;
+}
+.vid-skinny a{
+  text-decoration: none;
+}
 iframe{
   display: inline-block;
 }
@@ -39,6 +58,10 @@ li.non-admin{
   border-radius: .25em;
   text-align: center;
   margin-left: 4em;
+  margin-bottom: 1.5em;
+}
+.vid-line{
+  display: inline-block;
 }
 li.admin{
   background: red;
@@ -56,6 +79,10 @@ a.admin{
 }
 a{
   color: white;
+}
+li:hover{
+  background-color: #005f5f;
+  border-radius: .65em;
 }
 #regular, #special{
   width: 38%;
