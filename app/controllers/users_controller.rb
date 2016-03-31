@@ -30,7 +30,11 @@ end
 
 def account
   @user = @current_user
+  if (@current_user == nil)
+  redirect_to login_path
+else
   @video = @current_user.favorited_videos
+end
 end
 
   def index

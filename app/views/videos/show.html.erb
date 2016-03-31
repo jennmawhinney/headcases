@@ -1,8 +1,7 @@
-<div class="vid-wide">
-
+<div class="vid-extra-wide">
 <h1><%= @video.name %></h1>
 
-<video width="625" height="437.5" src="<%= @video.embed_url %>" frameborder="0" allowfullscreen controls autoplay='true'></video>
+<video width="781.25" height="547" src="<%= @video.embed_url %>" frameborder="0" allowfullscreen controls autoplay='true'></video>
 </div>
 
 <div id="regular">
@@ -10,7 +9,7 @@
 <%- unless @current_user.favorited_videos.exists?(id: @video.id) -%>
 
 <ul>
-<li class='non-admin'><a><%= link_to 'Add', favorite_videos_path(video_id: @video), method: :post %></a></li>
+<li class='non-admin' class='add'><a><%= link_to 'Add', favorite_videos_path(video_id: @video), method: :post %></a></li>
 <%- else -%>
 <li class='non-admin'><a><%= link_to 'Remove', favorite_video_path(@video), method: :delete %></a></li>
 </ul>
