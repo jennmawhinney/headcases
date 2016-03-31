@@ -3,7 +3,7 @@
 </div>
 <div class="vid-wide">
   <% @video.each do |video| %>
-  <iframe width="280" height="157.5" src="<%= video.embed_url %>" frameborder="0" allowfullscreen></iframe>
+  <a href="/videos/<%= video.id %>"><video width="280" height="157.5" src="<%= video.embed_url %>" frameborder="0" allowfullscreen controls></video></a>
 
 
 <li class="non-admin"><a><%= link_to 'Remove', favorite_video_path(video.id), method: :delete %></a></li>

@@ -79,7 +79,7 @@ i.fa{
 .nav ul {
   font-size: 0.6em;
   list-style: none;
-  background-color: #444;
+  background-color: #272525;
   text-align: center;
   padding: 0;
   margin: 0;
@@ -100,6 +100,7 @@ i.fa{
 
 .nav a:hover {
   background-color: #005f5f;
+  border-radius: .65em;
 }
 
 .nav a.active {
