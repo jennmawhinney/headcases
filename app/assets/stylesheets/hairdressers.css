@@ -8,7 +8,7 @@ body{
   font-family: 'Raleway', sans-serif;
 }
 body.session, body.headcase{
-  background-image: url('step.png');
+  background-image: url('http://res.cloudinary.com/dlbulfw7b/image/upload/v1459448911/step_mmkb1m.png');
   background-size: cover;
 }
 .container{
