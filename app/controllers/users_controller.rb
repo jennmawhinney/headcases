@@ -24,6 +24,10 @@ class UsersController < ApplicationController
   redirect_to root_path
   end
 
+def forgot
+  @user = @current_user
+end
+
 def account
   @user = @current_user
   @video = @current_user.favorited_videos

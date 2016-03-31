@@ -54,6 +54,9 @@ a.admin{
   text-decoration: none;
   color: white;
 }
+a{
+  color: white;
+}
 #regular, #special{
   width: 38%;
   margin: 0 auto;
