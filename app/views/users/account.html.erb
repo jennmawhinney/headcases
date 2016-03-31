@@ -1,5 +1,5 @@
 <h1>Hi <%= @user.first_name %>!</h1>
-<div class="videos">
+<div class="vid">
 <h2>Your Videos</h2>
 <% @video.each do |video| %>
 <iframe width="280" height="157.5" src="<%= video.embed_url %>" frameborder="0" allowfullscreen></iframe>
