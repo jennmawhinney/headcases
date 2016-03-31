@@ -1,16 +1,20 @@
+<div class="vid-show">
 <h1>Training Videos</h1>
+</div>
 
+<div class="vid-wide">
 <h2>Cutting and Styling</h2>
 <% @videos.each do |video| %>
 <% if video.technique == 'Styling' %>
-<iframe width="280" height="157.5" src="<%= video.embed_url %>" frameborder="0" allowfullscreen></iframe>
-<% end %>
-<% end %>
+<a href="/videos/<%= video.id %>"><video width="280" height="157.5" src="<%= video.embed_url %>" frameborder="0"  allowfullscreen controls></video></a>
 
+<% end %>
+<% end %>
 
 <h2>Colouring</h2>
 <% @videos.each do |video| %>
 <% if video.technique == 'Colouring' %>
-<iframe width="280" height="157.5" src="<%= video.embed_url %>" frameborder="0" allowfullscreen></iframe>
+<video width="280" height="157.5" src="<%= video.embed_url %>" frameborder="0" allowfullscreen autostart="0" controls></video>
 <% end %>
 <% end %>
+</div>

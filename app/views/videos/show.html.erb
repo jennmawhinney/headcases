@@ -1,17 +1,29 @@
+<div class="vid-wide">
+
 <h1><%= @video.name %></h1>
 
-<iframe width="560" height="315" src="<%= @video.embed_url %>" frameborder="0" allowfullscreen></iframe>
+<video width="625" height="437.5" src="<%= @video.embed_url %>" frameborder="0" allowfullscreen controls autoplay='true'></video>
+</div>
 
+<div id="regular">
 <% if @current_user.present? %>
 <%- unless @current_user.favorited_videos.exists?(id: @video.id) -%>
-<%= link_to 'Add', favorite_videos_path(video_id: @video), method: :post %>
+
+<ul>
+<li class='non-admin'><a><%= link_to 'Add', favorite_videos_path(video_id: @video), method: :post %></a></li>
 <%- else -%>
-<%= link_to 'Remove', favorite_video_path(@video), method: :delete %>
+<li class='non-admin'><a><%= link_to 'Remove', favorite_video_path(@video), method: :delete %></a></li>
+</ul>
+</div>
 <%- end -%>
 <% end %>
 
-
+<div id="special">
 <% if @current_user.admin? %>
-<%= link_to 'Edit', edit_video_path(@video) %>
-<%= link_to 'Delete', @video, :method => :delete %>
+
+<ul>
+<li class='admin'><a><%= link_to 'Edit', edit_video_path(@video) %></a></li>
+<li class='admin'><a><%= link_to 'Delete', @video, :method => :delete %></a></li>
+</ul>
+</div>
 <% end %>

@@ -7,7 +7,7 @@
 
 <% @hairdresser.videos.each do |video| %>
 <% if video.hairdresser_id == @hairdresser[:id] %>
-<iframe width="250" height="175" src="<%= video.embed_url %>" frameborder="0" allowfullscreen></iframe>
+<video width="250" height="175" src="<%= video.embed_url %>" frameborder="0" allowfullscreen controls></video>
 
 <% end %>
 <% end %>

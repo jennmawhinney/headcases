@@ -10,16 +10,68 @@ body{
   width: 70%;
   margin: 0 auto;
 }
-.nav{
-  width: 100%;
-}
 .vid{
   width: 50%;
   margin: 0 auto;
 }
+.vid-wide{
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+iframe{
+  display: inline-block;
+}
+.vid-show{
+  width: 60%;
+  margin: 0 auto;
+}
+.vid-show h1, p{
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+li.non-admin{
+  background: #272525;
+  color: white;
+  display: inline-block;
+  padding: .5em 1em;
+  border-radius: .25em;
+  text-align: center;
+  margin-left: 4em;
+}
+li.admin{
+  background: red;
+  color: white;
+  display: inline-block;
+  padding: .5em 1em;
+  border-radius: .25em;
+  text-align: center;
+  margin-left: 4em;
+  margin-top: 1em;
+}
+a.admin{
+  text-decoration: none;
+  color: white;
+}
+#regular, #special{
+  width: 38%;
+  margin: 0 auto;
+}
+.vid-show a{
+  text-decoration: none;
+  color: white;
+}
 .thumb{
 
 
+}
+i.fa{
+  font-size: 15em;
+  margin-top: .25em;
+}
+.fa{
+  color: black;
 }
 .feature-video{
 
