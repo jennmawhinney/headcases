@@ -1,3 +1,4 @@
+
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
 body{
@@ -174,6 +175,7 @@ li.special{
   cursor: default;
 }
 
+/* ################ Form #################### */
 
 @media screen and (min-width: 600px) {
   .nav li {
@@ -262,7 +264,7 @@ li.special{
       background-color:#34CACA;
   }
 }
-/*#########################################*/
+/*################# LOGIN ########################*/
 .float{
   margin: -20px;
 }
@@ -313,7 +315,6 @@ input[type=checkbox] ~ ul {
    -moz-transition:all 1s ease;
    -o-transition:all 1s ease;
    transition:all 1s ease;
-
 }
 input[type=checkbox]:checked ~ ul {
 	max-height: 100%;

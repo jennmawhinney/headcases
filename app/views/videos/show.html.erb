@@ -8,27 +8,29 @@
 <% if @current_user.present? %>
 <%- unless @current_user.favorited_videos.exists?(id: @video.id) -%>
 
-<!-- <div id="special"> -->
-<p>
+<div class="special">
+<!-- <div id="vid-skinny"> -->
 <ul>
+  <div class="super-special">
 <li class='non-admin' class='add'><a><%= link_to 'Add', favorite_videos_path(video_id: @video), method: :post %></a></li>
-<%- else -%>
-<li class='non-admin'><a><%= link_to 'Remove', favorite_video_path(@video), method: :delete %></a></li>
-</ul>
 <!-- </div> -->
-</p>
+<%- else -%>
+<!-- <div class="super-special"> -->
+<li class='non-admin'><a><%= link_to 'Remove', favorite_video_path(@video), method: :delete %></a></li>
+<!-- </div> -->
+</ul>
 <%- end -%>
 <% end %>
 
 <% if @current_user.admin? %>
-<!-- <div id="special"> -->
-<p>
 
 <ul>
+  <!-- <div class="super-duper-special"> -->
 <li class='admin'><a><%= link_to 'Edit', edit_video_path(@video) %></a></li>
 <li class='admin'><a><%= link_to 'Delete', @video, :method => :delete %></a></li>
+</div>
 </ul>
-</p>
 
-<!-- </div> -->
 <% end %>
+<!-- </div> -->
+</div>
