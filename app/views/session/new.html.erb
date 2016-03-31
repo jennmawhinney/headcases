@@ -1,15 +1,45 @@
-<div class="vid-show">
-<h1>Please Login</h1>
-<div class="form-style-8">
+  <%= form_tag login_path do %>
+<ul>
+<li class="cb1"><input type="checkbox" id="cb1"/><label for="cb1">Login</label>
+
+      <ul>
+        <li><label>Email</label></li>
+        <li><%= text_field_tag :email %></li>
+        <li><label>Password</label></li>
+        <li><%= password_field_tag :password %></li>
+        <li><%= submit_tag 'Login' %></li>
+      </ul>
+  </li>
+</ul>
+<% end %>
+
+
+  <!-- <div class="vid-show">
+  <h1>Please Login</h1>
+  <div class="form-style-8">
+
+  <%= form_tag login_path do %>
+    <%= label_tag :email %>
+    <%= text_field_tag :email %>
+
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+
+    <%= submit_tag 'Login' %>
+  <% end %>
+  </div>
+  </div> -->
+
+<!-- ################################################# -->
+<!-- <div class="form-style-8">
 
 <%= form_tag login_path do %>
-  <%= label_tag :email %>
-  <%= text_field_tag :email %>
-
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-
-  <%= submit_tag 'Login' %>
+<ul>
+	<li><input type="checkbox" id="cb1"/><label for="cb1">Level 1</label>
+		<ul>
+			<li><label>Email</label><%= text_field_tag :email %></li>
+			<li><label>Password</label><%= password_field_tag :password %></li>
+      <li><%= submit_tag 'Login' %></li>
+		</ul>
 <% end %>
-</div>
-</div>
+</div> -->

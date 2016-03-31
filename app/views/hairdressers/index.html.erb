@@ -3,24 +3,36 @@
 <h2>Stylists</h2>
 </div>
 
-<div class="vid-show-wide">
+<div class="vid-show">
+<p>
 <% @hairdressers.each do |hairdresser| %>
 <% if hairdresser.discipline == 'Stylist' %>
+<div class="hairdresser">
 <%= image_tag(hairdresser.image, :class => 'thumb') %>
+<h3>
 <%= link_to(hairdresser.name, hairdresser) %>
+</h3>
+</div>
 <% end %>
 <% end %>
+</p>
 </div>
 
 <div class="vid-show">
 <h2>Colourists</h2>
 </div>
 
-<div class="vid-show-wide">
+<div class="vid-show">
+
 <% @hairdressers.each do |hairdresser| %>
 <% if hairdresser.discipline == 'Colour Technician' %>
+<div class="hairdresser">
 <%= image_tag(hairdresser.image, :class => 'thumb') %>
+<h3>
 <%= link_to(hairdresser.name, hairdresser) %>
+</h3>
+</div>
 <% end %>
 <% end %>
+
 </div>

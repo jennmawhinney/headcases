@@ -1,18 +1,21 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
 body{
-  background-image: url('step.png');
-  background-image-opacity: 50%;
-  background-size: cover;
+  /*background-image: url('step.png');*/
+  background-color: #1F1E1D;
   color: #272525;
   font-size: 16px;
   font-family: 'Raleway', sans-serif;
+}
+body.session, body.headcase{
+  background-image: url('step.png');
+  background-size: cover;
 }
 .container{
   width: 70%;
   margin: 0 auto;
 }
-h1, h2{
+h1, h2, h4{
   color: #F0F2F1;
 }
 h1.low{
@@ -69,6 +72,16 @@ iframe{
   margin-bottom: 1em;
   color: #F0F2F1;
 }
+.hairdresser{
+  display: inline-block;
+  margin-right: 50px;
+}
+.thumb{
+  width:200px;
+}
+.feature{
+  width: 200px;
+}
 li.non-admin{
   background: #272525;
   color: #F0F2F1;
@@ -110,20 +123,6 @@ li:hover{
 .vid-show a{
   text-decoration: none;
   color: #F0F2F1;
-}
-.thumb{
-
-
-}
-i.fa{
-  font-size: 15em;
-  margin-top: .25em;
-}
-.fa{
-  color: #272525;
-}
-.feature-video{
-
 }
 .nav ul {
   font-size: 0.6em;
@@ -244,4 +243,76 @@ i.fa{
       background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
       background-color:#34CACA;
   }
+}
+/*#########################################*/
+
+a:hover.cb1{
+  background: none;
+}
+ul{
+  list-style-type: none;
+}
+li.cb1{
+background: none;
+color: white;
+}
+.cb1{
+  margin-left: 750px;
+  margin-top: -75px;
+  display: inline-block;
+}
+.cb1 li:hover{
+  background: none;
+}
+label{
+	background-color: #2C2E32;
+	border-radius: 5px;
+	padding: 3px;
+	padding-left: 25px;
+	color: white;
+}
+li {
+	margin: 5px;
+	padding: 5px;
+	border-radius: 5px;
+}
+input[type=checkbox] { display: none; }
+input[type=checkbox] ~ ul {
+	max-height: 0;
+	max-width: 0;
+	opacity: 0;
+	overflow: hidden;
+	white-space:nowrap;
+   -webkit-transition:all 1s ease;
+   -moz-transition:all 1s ease;
+   -o-transition:all 1s ease;
+   transition:all 1s ease;
+
+}
+input[type=checkbox]:checked ~ ul {
+	max-height: 100%;
+	max-width: 100%;
+	opacity: 1;
+}
+input[type=checkbox] + label:before{
+	transform-origin:25% 50%;
+  border: 8px solid transparent;
+  border-width: 8px 12px;
+  border-left-color: white;
+  margin-left: -20px;
+	width: 0;
+	height: 0;
+	display: inline-block;
+	text-align: center;
+	content: '';
+	color: #AAAFAB;
+   -webkit-transition:all .5s ease;
+   -moz-transition:all .5s ease;
+   -o-transition:all .5s ease;
+   transition:all .5s ease;
+	position: absolute;
+	margin-top: 1px;
+}
+input[type=checkbox]:checked + label:before {
+	transform: rotate(90deg);
 }

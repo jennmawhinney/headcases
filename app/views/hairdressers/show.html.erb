@@ -1,8 +1,9 @@
+<div class="vid-wide">
 <h1><%= @hairdresser.name %></h1>
 
 <%= image_tag(@hairdresser.image, :class => 'feature') %>
 <p>
-  <li><%= @hairdresser.blurb %></li>
+  <h4><%= @hairdresser.blurb %></h4>
 </p>
 
 <% @hairdresser.videos.each do |video| %>
@@ -14,6 +15,9 @@
 
 
 <% if @current_user.admin? %>
-<%= link_to 'Edit Hairdresser', edit_hairdresser_path(@hairdresser) %>
-<%= link_to 'Delete Hairdresser', @hairdresser, :method => :delete %>
+<p>
+<li class='admin'><a><%= link_to 'Edit', edit_hairdresser_path(@hairdresser) %></a></li>
+<li class='admin'><a><%= link_to 'Delete', @hairdresser, :method => :delete %></a></li>
+</p>
 <% end %>
+</div>
