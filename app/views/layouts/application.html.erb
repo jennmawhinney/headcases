@@ -1,76 +1,77 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>HeadcaseApp</title>
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <head>
+    <title>HeadcaseApp</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <%= cloudinary_js_config %>
-</head>
-<body class="<%= params[:controller] %>">
+    <%= cloudinary_js_config %>
+  </head>
+  <body class="<%= params[:controller] %>">
 
-<nav class ='nav'>
-  <ul>
-  <li>
-  <a><%= link_to "Home", root_path, :class => 'nav' %></a>
-  </li>
-  <li>
-  <a><%= link_to 'My Account', '/users/account', :class => 'nav' %></a>
-  </li>
-  <li>
-  <a><%= link_to 'Hairdressers', hairdressers_path, :class => 'nav' %></a>
-  </li>
-  <li>
-  <a><%= link_to 'Videos', videos_path, :class => 'nav' %></a>
-  </li>
+    <nav class='nav'>
+      <ul>
+        <li>
+          <a><%= link_to "Home", root_path, :class => 'nav' %></a>
+        </li>
+        <li>
+          <a><%= link_to 'My Account', '/users/account', :class => 'nav' %></a>
+        </li>
+        <li>
+          <a><%= link_to 'Hairdressers', hairdressers_path, :class => 'nav' %></a>
+        </li>
+        <li>
+          <a><%= link_to 'Videos', videos_path, :class => 'nav' %></a>
+        </li>
 
-  <% if @current_user.present? %>
-    <% if @current_user.admin? %>
-    <li>
-    <a><%= link_to 'New Videos', new_video_path %></a>
-    </li>
-    <li>
-    <a><%= link_to 'New Hairdressers', new_hairdresser_path  %></a>
-    </li>
-    <li>
-      <a><%= link_to "All users", users_path %></a>
-      </li>
-    <% end %>
-    <li>
-    <a><%= link_to "Edit profile", users_edit_path %></a>
-    </li>
-    <li>
-    <a><%= link_to "Logout #{ @current_user.first_name }", login_path, :method => :delete %></a>
-    </li>
-  <% else %>
-  <li>
-    <a><%= link_to "Sign up", signup_path %></a>
-    </li>
-    <div class="float">
-    <%= yield :new %>
+        <% if @current_user.present? %>
+        <% if @current_user.admin? %>
+        <li>
+          <a><%= link_to 'New Videos', new_video_path %></a>
+        </li>
+        <li>
+          <a><%= link_to 'New Hairdressers', new_hairdresser_path  %></a>
+        </li>
+        <li>
+          <a><%= link_to "All users", users_path %></a>
+        </li>
+        <% end %>
+        <li>
+          <a><%= link_to "Edit profile", users_edit_path %></a>
+        </li>
+        <li>
+          <a><%= link_to "Logout #{ @current_user.first_name }", login_path, :method => :delete %></a>
+        </li>
+      <% else %>
+        <li>
+          <a><%= link_to "Sign up", signup_path %></a>
+        </li>
+        <div class="float">
+          <%= yield :new %>
+        </div>
+        <% end %>
+      </ul>
+    </nav>
   </div>
-  <% end %>
-  </ul>
-</nav>
-</div>
-<% if flash[:error].present? %>
+  <% if flash[:error].present? %>
   <h2 class="error">
     <%= flash[:error] %>
   </h2>
-<% end %>
+  <% end %>
 
-<div class="container">
-<%= yield %>
-</div>
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>

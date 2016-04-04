@@ -1,21 +1,28 @@
-  <%= form_tag login_path do %>
+<%= form_tag login_path do %>
 <ul>
-<li class="cb1"><input type="checkbox" id="cb1"/><label for="cb1">Login</label>
+  <li class="cb1"><input type="checkbox" id="cb1"/>
+    <label for="cb1">Login</label>
 
-      <ul>
-        <li><label>Email</label></li>
-        <div class="colour">
+    <ul>
+      <li>
+        <label>Email</label>
+      </li>
+       <div class="colour">
         <li><%= text_field_tag :email %></li>
       </div>
-        <li><label>Password</label></li>
-        <div class="colour">
+      <li>
+        <label>Password</label>
+      </li>
+      <div class="colour">
         <li><%= password_field_tag :password %></li>
       </div>
-        <div class="colour">
+      <div class="colour">
         <li><%= submit_tag 'Login' %></li>
-        <li><a href="mailto:email@echoecho.com?subject=Forgot Password">Forgot Password</a> </li>
-        </div>
-      </ul>
+        <li>
+          <a href="mailto:email@echoecho.com?subject=Forgot Password">Forgot Password</a>
+        </li>
+      </div>
+    </ul>
   </li>
 </ul>
 <% end %>
