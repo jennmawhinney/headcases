@@ -9,6 +9,6 @@ Things I want to change:
 
 * Add JQuery event listeners and have the site send emails (forgot password, sign up to newsletter etc.)
 
-Check it out in Heroku: https://headcased.herokuapp.com/'
+Check it out in Heroku: https://headcased.herokuapp.com
 
 Take a look around and let me know what you think!
